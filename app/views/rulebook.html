@@ -1,0 +1,123 @@
+<h3>Ranking szachowy - regulamin</h3>
+
+<pre>
+
+Ogólne zasady
+
+Dla podanych niżej rankingów przyjąłem zasadę, że różnica rankingów w kategoriach dla
+dwóch zawodników grajacych mecz składający się przynajmniej z takiej ilości partii,
+że wynik meczu nie mógł wynosić 100 % , równa się logarytmowi naturalnemu
+ze stosunku zdobytych do straconych punktów. Wynika z tego kolejna zasada:
+gdy przewidywany wynik meczu zawodnika A z zawodnikiem B wynosi a/b a
+przewidywany wynik meczu zawodnika B z zawodnikiem C wynosi c/d to
+przewidywany wynik meczu zawodnika A z zawodnikiem C wynosi e/f=a/b*c/d.
+Do obliczeń rankingów przyjąłem skalę w tysięcznych częściach kategorii (mk).
+Po podzieleniu przez 5 i odrzuceniu ułamĸów otrzymamy wartość rankingu w skali Elo.
+Z tych założeń wynikają podane niżej wzory do obliczania rankingów.
+Wykres przewidywanych wyników procentowych przy zerowej różnicy rankingu jest styczny
+do prostej wyrażającej zależność przewidywanego wyniku od różnicy rankingu dla wzorów
+używanych w Polskim Związku Szachowym do obliczania norm na kategorie. W porównaniu
+z rankigiem FIDE, gdzie przewidywany wynik meczu jest obliczany przy pomocy całki
+z funkcji rozkładu normalnego prawdopodobieństwa (krzywa Gaussa), który został opracowany
+przez Arpada Elo, podany wyżej wykres wolniej zmierza do 100 % przy dużych różnicach
+rankingu (w rankingu FIDE dla różnic przekraczających 400 pkt. wprowadzono korekty
+zmniejszające różnicę rankingu). Dla rankingu FIDE nie obowiązuje podana wyżej
+zależność pomiędzy przewidywanymi wynikami meczów zawodników A, B i C.
+
+Ranking arcymistrzów (RA)
+
+Ranking ten oblicza się dla arcymistrzów, którzy wygrali przynajmniej jedną
+partię z zawodnikiem już znajdującym się na liście tego rankingu i mieli
+w tym momencie ranking FIDE przynajmniej 2600.
+Najszybsze tempo gry: 1,5 godziny na partię + 30 sekund na posunięcie.
+Do tego rankingu można liczyć tylko jedną partię dziennie.
+
+Wzory do obliczania rankingu RA:
+P1=1/(EXP((R2-R1)/1000)+1)
+D1=INT(100*(W1-P1))
+R1N=R1+D1
+P2=1/(EXP((R1-R2)/1000)+1)
+D2=INT(100*(W2-P2))
+R2N=R2+D2
+
+Objaśnienia:
+W1  - wynik punktowy pierwszego zawodnika
+W2  - wynik punktowy drugiego zawodnika
+P1  - przewidywany wynik punktowy w partii dla pierwszego zawodnika
+P2  - przewidywany wynik punktowy w partii dla drugiego zawodnika
+R1  - ranking pierwszego zawodnika (w mk) przed partią
+R2  - ranking drugiego zawodnika (w mk) przed partią
+D1  - zmiana rankingu dla pierwszego zawodnika
+D2  - zmiana rankingu dla drugiego zawodnika
+R1N - ranking pierwszego zawodnika po partii
+R2N - ranking drugiego zawodnika po partii
+
+Jako początkowy ranking przyjmuje się 13000 mk (2600 pkt. Elo).
+Ranking zmienia się po każdej ocenionej partii. Nie liczy się wyników
+podanych z opóźnieniem, jeżeli przynajmniej jeden zawodnik miał już
+policzoną partię graną w późniejszym terminie (nie można liczyć partii
+wcześniejszych po późniejszych ponieważ wtedy byłby przyjmowany ranking
+osiągnięty później niż rozgrywana partia).
+Podany jest również ranking maksymalny.
+
+Ranking ogólny
+
+Ranking ten określa przeważnie poziom gry błyskawicznej lub szybkiej ponieważ
+nie ma w nim mnożnika zależnego od tempa gry. Jako początkowy ranking przyjmuje
+się ranking przeliczony z rankingu FIDE lub ranking odpowiadający posiadanej kategorii
+(przyjmuje się większą wartość) zaokrąglony do pełnych wartości w kategoriach
+ale nie mniej niż 5000 mk (1000 pkt. Elo) z wyjątkiem dzieci poniżej 5 lat i programów,
+dla których przyjmuje się wartość z podanej niżej tabeli. Jako początkowy ranking
+maksymalny przyjmuje się ranking przeliczony z maksymalnego rankingu FIDE danego zawodnika
+lub ranking odpowiadający posiadanej kategorii.
+Przyjmuje się wyższą wartość z przeliczonych z rankingu FIDE i z rankingu odpowiadającego
+posiadanej kategorii.
+Liczy się w nim wszystkie partie niezależnie od tempa gry.
+W rankingu tym liczy się też programy szachowe.
+Wzory do obliczania tego rankingu są takie same jak dla rankingu RA.
+Dla meczów ranking liczy się tyle razy ile partii było w meczu.
+Zawodnicy są podzieleni na 2 grupy. Do grupy A należą zawodnicy, którzy
+rozegrali przynajmniej 100 ocenionych partii.
+Do grupy B należą pozostali zawodnicy.
+Gdy grają za sobą zawodnicy różnych grup to ranking zawodnika z grupy A
+nie zmienia się a ranking zawodnika z grupy B zmienia się podwójnie.
+Na listach rankingowych umieszczeni są tylko zawodnicy z grupy A.
+
+Porównanie kategorii i wartości rankingów w tysięcznych częściach
+kategorii (mk) z kategoriami i rankingiem FIDE
+i Polskiego Związku Szachowego.
+
+k	  mk   pkt. Elo
+
+0         0        0     Program losowy
+1      1000      200     Najsłabsze programy
+2      2000      400     Słabe programy, dzieci od 2 do 3 lat
+3      3000      600     Dzieci od 3 do 4 lat
+4      4000      800     Dzieci od 4 do 5 lat
+5      5000     1000     Zawodnicy bez kategorii
+6      6000     1200     Zawodnicy V kategorii
+7      7000     1400     Zawodnicy IV kategorii
+8      8000     1600     Zawodnicy III kategorii
+9      9000     1800     Zawodnicy II kategorii
+10     10000     2000 	  Zawodnicy I kategorii
+11     11000     2200	  Kandydaci na mistrzów
+12     12000     2400     Mistrzowie
+13     13000     2600     Arcymistrzowie
+14     14000     2800     Superarcymistrzowie
+15     15000     3000     Silne programy (mistrzowie komputerowi)
+16     16000     3200     Bardzo silne programy (arcymistrzowie komputerowi)
+17     17000     3400     Najsilniejsze programy (superarcymistrzowie komputerowi)
+
+Kategorię  zawodnika  (ilość  kategorii  powyżej  poziomu   zerowego)
+otrzymuje się automatycznie przez podzielenie  rankingu  maksymalnego
+przez 1000 i odrzucenie ułamków.
+
+Warszawa  2014-01-15
+
+Stefan Wronicz
+ul. Belgradzka 20 m. 55
+02-793 Warszawa
+telefon komórkowy 696652278
+E-mail: wronicz@gmail.com
+
+</pre>
