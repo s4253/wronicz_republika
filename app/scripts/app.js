@@ -38,14 +38,20 @@ angular
       })
 
 
+      .when('/tournaments', {
+        templateUrl: 'views/tournaments.html',
+        controller: 'AboutCtrl'
+      })
+      .when('/allPlayers', {
+        templateUrl: 'views/allPlayers.html',
+        controller: 'AboutCtrl'
+      })
+
       .when('/grandmasters', {
         templateUrl: 'views/grandmasters.html',
         controller: 'AboutCtrl'
       })
-      .when('/tournaments', {
-        templateUrl: 'views/tournaments.html',
-        controller: 'AboutCtrl'
-      }).when('/contact', {
+     .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'AboutCtrl'
       })
