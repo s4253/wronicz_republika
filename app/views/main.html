@@ -1,12 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-9">
-      <img src="images/example.png" style="opacity: 0.9;" width="500"/>
+    <div class="col-lg-7">
+      <img src="images/example.png" style="opacity: 0.9;" width="360"/>
     </div>
-    <div class="col-lg-3">
-      <img src="images/wronicz.jpg" style=""/>
+    <div class="col-lg-5">
+      <h3>Najlepsi zawodnicy :</h3>
 
-      <h4>Stefan Wronicz</h4>
+      <div ng-repeat="user in userList">
+        <div class="row">
+          <div class="col-lg-7">{{user[3]}}.{{user[4]}} {{user[5]}}</div>
+
+          <div class="col-lg-2">{{user[7]}}</div>
+          <div class="col-lg-3">{{user[8]}}</div>
+        </div>
+
+      </div>
+
     </div>
   </div>
 

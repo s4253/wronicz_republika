@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name newWroniczApp.controller:AboutCtrl
+ * @name chessRankingPortal.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the newWroniczApp
+ * Controller of the chessRankingPortal
  */
-angular.module('newWroniczApp')
+angular.module('chessRankingPortal')
   .controller('AboutCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

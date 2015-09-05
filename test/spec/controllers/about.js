@@ -3,7 +3,7 @@
 describe('Controller: AboutCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('newWroniczApp'));
+  beforeEach(module('chessRankingPortal'));
 
   var AboutCtrl,
     scope;

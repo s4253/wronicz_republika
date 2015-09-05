@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name newWroniczApp
+ * @name chessRankingPortal
  * @description
- * # newWroniczApp
+ * # chessRankingPortal
  *
  * Main module of the application.
  */
 angular
-  .module('newWroniczApp', [
+  .module('chessRankingPortal', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -51,7 +51,7 @@ angular
         templateUrl: 'views/grandmasters.html',
         controller: 'AboutCtrl'
       })
-     .when('/contact', {
+      .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'AboutCtrl'
       })
@@ -77,4 +77,30 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }).factory('PolandFactory', ['$http', function($http) {
+    var factory = {};
+
+
+    factory.getUserList = function () {
+      var polandBestPlayers = [];
+
+      $http.get("views/poland.html").success(function (data) {
+
+        var polandFile = data.split('\n');
+
+        for(var i = 8; i < 8 + 9; ++i) {
+          var item = polandFile[i];
+
+
+          polandBestPlayers.push(item.split(" "));
+        }
+
+      });
+      return polandBestPlayers;
+    };
+
+
+    return factory;
+
+  }]);
+

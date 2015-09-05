@@ -2,16 +2,15 @@
 
 /**
  * @ngdoc function
- * @name newWroniczApp.controller:MainCtrl
+ * @name chessRankingPortal.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the newWroniczApp
+ * Controller of the chessRankingPortal
  */
-angular.module('newWroniczApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+angular.module('chessRankingPortal')
+  .controller('MainCtrl', function ($scope, PolandFactory) {
+
+    $scope.userList = PolandFactory.getUserList();
+
+
   });
