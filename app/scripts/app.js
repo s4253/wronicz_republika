@@ -77,7 +77,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).factory('PolandFactory', ['$http', function($http) {
+  }).factory('PolandFactory', ['$http', function ($http) {
     var factory = {};
 
 
@@ -86,21 +86,37 @@ angular
 
       $http.get("views/poland.html").success(function (data) {
 
-        var polandFile = data.split('\n');
+          var polandFile = data.split('\n');
 
-        for(var i = 8; i < 8 + 9; ++i) {
-          var item = polandFile[i];
+          var found = false;
+          var bestPlayers = 0;
+          var i = 0;
 
+          while (bestPlayers < 15 && i < 30) {
+            var item = polandFile[i++];
+            item = item.trim();
+            if (item.contains('Ranking FIDE')) {
+              found = true;
+              continue;
+            }
 
-          polandBestPlayers.push(item.split(" "));
+            if (found) {
+              if(item == ''){
+                continue;
+              }
+              polandBestPlayers.push(item.split(" "));
+              ++bestPlayers;
+            }
+          }
         }
-
-      });
+      )
+      ;
       return polandBestPlayers;
     };
 
-
     return factory;
 
-  }]);
+  }
+  ])
+;
 
