@@ -13,4 +13,14 @@ angular.module('chessRankingPortal')
     $scope.userList = PolandFactory.getUserList();
 
 
+    var cfg = {
+      pieceTheme: 'lib/chessboardjs/img/chesspieces/wikipedia/{piece}.png',
+      position: 'r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R'  ,
+      draggable: true
+    };
+
+
+    var board = ChessBoard('board', cfg);
+
+
   });
