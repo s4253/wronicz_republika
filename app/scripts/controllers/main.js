@@ -12,10 +12,14 @@ angular.module('chessRankingPortal')
 
     $scope.userList = PolandFactory.getUserList();
 
+    // BEGIN FEN - Change this FEN line to change the position
+    var fen = 'r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R';
+    // END FEN
+
 
     var cfg = {
       pieceTheme: 'lib/chessboardjs/img/chesspieces/wikipedia/{piece}.png',
-      position: 'rnbqkbnr/pppp1ppp/8/8/2B1Pp2/8/PPPP2PP/RNBQK1NR',
+      position: fen,
       draggable: true,
       dropOffBoard: 'trash'
     };
@@ -23,7 +27,7 @@ angular.module('chessRankingPortal')
     var board = ChessBoard('board', cfg);
 
     $('#setStartBtn').on('click', function() {
-      board.position('rnbqkbnr/pppp1ppp/8/8/2B1Pp2/8/PPPP2PP/RNBQK1NR');
+      board.position(fen);
     });
 
   });
