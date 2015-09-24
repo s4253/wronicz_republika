@@ -18,7 +18,7 @@ angular.module('chessRankingPortal')
 
 
     var cfg = {
-      pieceTheme: 'lib/chessboardjs/img/chesspieces/wikipedia/{piece}.png',
+      pieceTheme: 'bower_components/chessboard.js/img/chesspieces/wikipedia/{piece}.png',
       position: fen,
       draggable: true,
       dropOffBoard: 'trash'
