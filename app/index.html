@@ -8,8 +8,8 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="bower_components/chessboard.js/css/chessboard.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="bower_components/chessboard.js/css/chessboard.css"/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -43,8 +43,6 @@
         <ul class="nav navbar-nav">
           <li class="active"><a ng-href="#/">Strona Główna</a></li>
 
-
-
           <li><a ng-href="#/tournaments"><span class="glyphicon glyphicon-pawn"></span> Turnieje</a></li>
           <li><a ng-href="#/allPlayers"><span class="glyphicon glyphicon-th-list"></span> Lista zawodników</a></li>
 
@@ -62,8 +60,10 @@
           </li>
 
           <li class="dropdown">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-               aria-expanded="false">Teoria <span class="caret"></span></a>
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Teoria
+              <span class="caret"></span>
+            </a>
             <ul class="dropdown-menu">
               <li><a ng-href="#/rulebook">Regulamin</a></li>
               <li><a ng-href="#/rules">Zasady</a></li>
@@ -73,8 +73,10 @@
             </ul>
           </li>
 
-          <li><a ng-href="#/contact">Kontakt</a></li>
+        </ul>
 
+        <ul class="nav navbar-nav navbar-right">
+          <li class="pull-right"><a ng-href="#/contact">Kontakt</a></li>
         </ul>
 
       </div>
@@ -93,7 +95,7 @@
   <div class="container">
 
     <p class="c6">Zapraszamy do nowego serwisu: <a href="http://wronicz.linuxpl.info">http://wronicz.linuxpl.info</a></p>
-    <hr />
+    <hr/>
 
 
     <i>Strona znajduje się na serwerze<a href="http://www.republika.pl">www.republika.pl</a></i><a href="http://www.republika.pl"></a>
@@ -104,11 +106,12 @@
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
-  !function (A, n, g, u, l, a, r) {
-    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+  !function (A, n, g, u, l, a, r)
+  {
+    A.GoogleAnalyticsObject = l, A[l] = A[l] || function ()
+    {
       (A[l].q = A[l].q || []).push(arguments)
-    }, A[l].l = +new Date, a = n.createElement(g),
-      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }, A[l].l = +new Date, a = n.createElement(g), r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
   }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
   ga('create', 'UA-XXXXX-X');
