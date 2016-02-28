@@ -84,7 +84,7 @@ angular
     factory.getUserList = function () {
       var polandBestPlayers = [];
 
-      $http.get("views/poland.html").success(function (data) {
+      $http.get('views/poland.html').success(function (data) {
 
           var polandFile = data.split('\n');
 
@@ -95,16 +95,16 @@ angular
           while (bestPlayers < 15 && i < 30) {
             var item = polandFile[i++];
             item = item.trim();
-            if (item.contains('Ranking FIDE')) {
+            if (item.indexOf('Ranking FIDE') > -1) {
               found = true;
               continue;
             }
 
             if (found) {
-              if(item == ''){
+              if(item === ''){
                 continue;
               }
-              polandBestPlayers.push(item.split(" "));
+              polandBestPlayers.push(item.split(' '));
               ++bestPlayers;
             }
           }

@@ -24,7 +24,7 @@ angular.module('chessRankingPortal')
       dropOffBoard: 'trash'
     };
 
-    var board = ChessBoard('board', cfg);
+    var board = new ChessBoard('board', cfg);
 
     $('#setStartBtn').on('click', function() {
       board.position(fen);
